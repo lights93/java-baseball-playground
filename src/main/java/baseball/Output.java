@@ -5,7 +5,7 @@ public class Output {
     }
 
     public static void askInput() {
-        System.out.println("3개의 숫자를 입력해주세요");
+        System.out.println("숫자를 입력해 주세요 : ");
     }
 
     public static void printHintResultMessage(HintResultMessage hintResultMessage) {
