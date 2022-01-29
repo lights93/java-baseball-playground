@@ -16,8 +16,8 @@ public class Game {
     }
 
     public void findAnswer(Computer computer) {
-        String inputNumber = Input.getInputNumber();
-        HintResult hintResult = computer.calculateHint(inputNumber);
+        HintResult hintResult = computer.calculateHint(Input.getInputNumber());
+        Output.printHintResultMessage(HintResultMessage.from(hintResult));
         if (!hintResult.isAnswer()) {
             findAnswer(computer);
         }

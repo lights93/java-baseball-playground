@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class HintResult {
-    private static final int MAX_SIZE = 3;
+    public static final int MAX_SIZE = 3;
 
     private final Map<Hint, Integer> hints;
 
@@ -33,5 +33,17 @@ public class HintResult {
 
     public boolean isAnswer() {
         return hints.get(Hint.STRIKE) == MAX_SIZE;
+    }
+
+    public int getBallCount() {
+        return hints.get(Hint.BALL);
+    }
+
+    public int getStrikeCount() {
+        return hints.get(Hint.STRIKE);
+    }
+
+    public int getNothingCount() {
+        return hints.get(Hint.NOTHING);
     }
 }
