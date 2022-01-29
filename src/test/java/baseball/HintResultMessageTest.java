@@ -13,7 +13,7 @@ class HintResultMessageTest {
     @CsvSource({"3스트라이크,3,0,0", "2스트라이크,2,0,1",
         "1스트라이크,1,0,2", "2볼 1스트라이크,1,2,0", "1볼 1스트라이크,1,1,1",
         "3볼,0,3,0", "2볼,0,2,1", "1볼,0,1,2", "낫싱,0,0,3"})
-    void name(String message, int strike, int ball, int nothing) {
+    void makeMessage(String message, int strike, int ball, int nothing) {
         Map<Hint, Integer> hints = new EnumMap<>(Hint.class);
         hints.put(Hint.STRIKE, strike);
         hints.put(Hint.BALL, ball);

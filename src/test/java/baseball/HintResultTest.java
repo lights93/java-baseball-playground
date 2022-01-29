@@ -14,7 +14,7 @@ class HintResultTest {
     @CsvSource({"2,0,1",
         "1,0,2", "1,2,0", "1,1,1",
         "0,3,0", "0,2,1", "0,1,2", "0,0,3"})
-    void name(int strike, int ball, int nothing) {
+    void isNotAnswer(int strike, int ball, int nothing) {
         Map<Hint, Integer> hints = new EnumMap<>(Hint.class);
         hints.put(Hint.STRIKE, strike);
         hints.put(Hint.BALL, ball);
@@ -28,7 +28,7 @@ class HintResultTest {
     }
 
     @Test
-    void test() {
+    void isAnswer() {
         Map<Hint, Integer> hints = new EnumMap<>(Hint.class);
         hints.put(Hint.STRIKE, 3);
         hints.put(Hint.BALL, 0);

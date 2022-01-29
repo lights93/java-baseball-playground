@@ -18,7 +18,7 @@ class BaseballNumbersTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"111","112"})
-    void constructduplicateError(String input) {
+    void constructDuplicateError(String input) {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> BaseballNumbers.from(input))
             .withMessage("중복된 숫자없이 입력해주세요.");
