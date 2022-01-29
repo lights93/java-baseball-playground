@@ -20,7 +20,7 @@ public class Output {
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
     }
 
-    public static void printPlayOrEndErrorMessage() {
-        System.out.println("잘못된 입력입니다. 1 또는 2를 입력해주세요");
+    public static void printErrorMessage(String message) {
+        System.out.println("[에러] " + message);
     }
 }

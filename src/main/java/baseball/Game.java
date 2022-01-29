@@ -24,18 +24,26 @@ public class Game {
         try {
             return GameStatus.from(Input.getGameStatus());
         } catch (Exception e) {
-            Output.printPlayOrEndErrorMessage();
+            Output.printErrorMessage(e.getMessage());
             return getGameStatus();
         }
     }
 
-    public void findAnswer(Computer computer) {
-        Output.askInput();
-        String inputNumber = Input.getInputNumber();
-        HintResult hintResult = computer.calculateHint(BaseballNumbers.from(inputNumber));
+    private void findAnswer(Computer computer) {
+        HintResult hintResult = computer.calculateHint(getBaseballNumbers());
         Output.printHintResultMessage(HintResultMessage.from(hintResult));
         if (!hintResult.isAnswer()) {
             findAnswer(computer);
+        }
+    }
+
+    private BaseballNumbers getBaseballNumbers() {
+        Output.askInput();
+        try {
+            return BaseballNumbers.from(Input.getInputNumber());
+        } catch (Exception e) {
+            Output.printErrorMessage(e.getMessage());
+            return getBaseballNumbers();
         }
     }
 }

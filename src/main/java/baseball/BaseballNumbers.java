@@ -1,13 +1,26 @@
 package baseball;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class BaseballNumbers {
+    public static final int SIZE = 3;
     private final List<BaseballNumber> numbers;
 
     private BaseballNumbers(List<BaseballNumber> numbers) {
+        validateNumbers(numbers);
         this.numbers = numbers;
+    }
+
+    private void validateNumbers(List<BaseballNumber> numbers) {
+        if (numbers.size() != SIZE) {
+            throw new IllegalArgumentException("3개의 숫자만 입력해주세요.");
+        }
+
+        if (new HashSet<>(numbers).size() != SIZE) {
+            throw new IllegalArgumentException("중복된 숫자없이 입력해주세요.");
+        }
     }
 
     public static BaseballNumbers from(List<BaseballNumber> numbers) {

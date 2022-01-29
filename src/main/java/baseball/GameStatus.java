@@ -20,6 +20,6 @@ public enum GameStatus {
         return Arrays.stream(values())
             .filter(gameStatus -> gameStatus.input.equals(input))
             .findFirst()
-            .orElseThrow(IllegalArgumentException::new);
+            .orElseThrow(() -> new IllegalArgumentException("잘못된 입력입니다. 1또는 2를 입력해주세요."));
     }
 }
