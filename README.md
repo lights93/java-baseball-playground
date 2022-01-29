@@ -20,7 +20,7 @@
 - [X] 정답 확인
 - [X] 정답 아닐 시 반복 기능
 - [X] 게임 다시 시작 및 종료
-- [ ] 숫자 입력 validation
+- [X] 숫자 입력 validation
 - [X] 다시 시작 또는 종료 입력 validation
 
 ---
