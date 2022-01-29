@@ -26,6 +26,10 @@ public class HintResult {
         return hints.get(Hint.STRIKE) == BaseballNumbers.SIZE;
     }
 
+    public int getNothingCount() {
+        return hints.get(Hint.NOTHING);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -39,9 +43,5 @@ public class HintResult {
     @Override
     public int hashCode() {
         return Objects.hash(hints);
-    }
-
-    public int getNothingCount() {
-        return hints.get(Hint.NOTHING);
     }
 }

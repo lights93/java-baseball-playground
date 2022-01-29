@@ -40,11 +40,15 @@ public class BaseballNumbers {
         return numbers;
     }
 
-    public boolean contains(BaseballNumber number) {
-        return numbers.contains(number);
-    }
+    public Hint getHint(BaseballNumber number, int idx) {
+        if (!numbers.contains(number)) {
+            return Hint.NOTHING;
+        }
 
-    public boolean isStrike(BaseballNumber number, int idx) {
-        return number.equals(numbers.get(idx));
+        if (number.equals(numbers.get(idx))) {
+            return Hint.STRIKE;
+        }
+
+        return Hint.BALL;
     }
 }
