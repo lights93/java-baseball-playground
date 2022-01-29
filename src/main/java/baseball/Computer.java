@@ -1,31 +1,36 @@
 package baseball;
 
+import java.util.List;
 import java.util.Map;
 
 public class Computer {
-    private final String answer;
+    private final BaseballNumbers baseballNumbers;
 
-    public Computer(String answer) {
-        this.answer = answer;
+    public Computer(BaseballNumbers baseballNumbers) {
+        this.baseballNumbers = baseballNumbers;
     }
 
-    public HintResult calculateHint(String input) {
+    public HintResult calculateHint(BaseballNumbers baseballNumbers) {
         Map<Hint, Integer> hints = Hint.emptyMap();
-        for (int i = 0; i < input.length(); i++) {
-            String number = input.substring(i, i + 1);
+
+        List<BaseballNumber> numbers = baseballNumbers.getNumbers();
+
+        for (int i = 0; i < numbers.size(); i++) {
+            BaseballNumber number = numbers.get(i);
             Hint hint = getHint(number, i);
             hints.put(hint, hints.getOrDefault(hint, 0) + 1);
+
         }
 
         return HintResult.from(hints);
     }
 
-    private Hint getHint(String number, int idx) {
-        if (!answer.contains(number)) {
+    private Hint getHint(BaseballNumber number, int idx) {
+        if (!baseballNumbers.contains(number)) {
             return Hint.NOTHING;
         }
 
-        if (number.equals(answer.substring(idx, idx + 1))) {
+        if(baseballNumbers.isStrike(number, idx)) {
             return Hint.STRIKE;
         }
 

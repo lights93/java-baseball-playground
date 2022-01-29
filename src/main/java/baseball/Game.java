@@ -10,7 +10,8 @@ public class Game {
         GameStatus gameStatus = GameStatus.PLAY;
 
         while (gameStatus.isPlay()) {
-            Computer computer = new Computer("123");
+            BaseballNumbers baseballNumbers = NumbersGenerator.generate();
+            Computer computer = new Computer(baseballNumbers);
             findAnswer(computer);
 
             Output.printEndMessage();
@@ -20,7 +21,8 @@ public class Game {
 
     public void findAnswer(Computer computer) {
         Output.askInput();
-        HintResult hintResult = computer.calculateHint(Input.getInputNumber());
+        String inputNumber = Input.getInputNumber();
+        HintResult hintResult = computer.calculateHint(BaseballNumbers.from(inputNumber));
         Output.printHintResultMessage(HintResultMessage.from(hintResult));
         if (!hintResult.isAnswer()) {
             findAnswer(computer);
