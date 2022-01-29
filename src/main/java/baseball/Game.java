@@ -7,12 +7,17 @@ public class Game {
     }
 
     public void init() {
-        Output.askInput();
+        GameStatus gameStatus = GameStatus.PLAY;
 
-        Computer computer = new Computer("123");
-        findAnswer(computer);
+        while (gameStatus.isPlay()) {
+            Output.askInput();
 
-        // TODO
+            Computer computer = new Computer("123");
+            findAnswer(computer);
+
+            Output.printEndMessage();
+            gameStatus = GameStatus.from(Input.getGameStatus());
+        }
     }
 
     public void findAnswer(Computer computer) {

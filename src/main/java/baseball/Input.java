@@ -12,4 +12,7 @@ public class Input {
         return scanner.nextLine();
     }
 
+    public static String getGameStatus() {
+        return scanner.nextLine();
+    }
 }
