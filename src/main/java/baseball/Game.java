@@ -15,7 +15,17 @@ public class Game {
             findAnswer(computer);
 
             Output.printEndMessage();
-            gameStatus = GameStatus.from(Input.getGameStatus());
+            gameStatus = getGameStatus();
+        }
+    }
+
+    private GameStatus getGameStatus() {
+        Output.printPlayOrEndMessage();
+        try {
+            return GameStatus.from(Input.getGameStatus());
+        } catch (Exception e) {
+            Output.printPlayOrEndErrorMessage();
+            return getGameStatus();
         }
     }
 
