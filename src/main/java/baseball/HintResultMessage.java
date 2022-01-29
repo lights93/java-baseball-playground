@@ -11,7 +11,7 @@ public class HintResultMessage {
 
     private String makeMessage(HintResult hintResult) {
         int nothingCount = hintResult.getNothingCount();
-        if (nothingCount == HintResult.MAX_SIZE) {
+        if (nothingCount == BaseballNumbers.SIZE) {
             return Hint.NOTHING.getKoreanName();
         }
 

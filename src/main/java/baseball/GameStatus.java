@@ -12,14 +12,14 @@ public enum GameStatus {
         this.input = input;
     }
 
-    public boolean isPlay() {
-        return this == PLAY;
-    }
-
     public static GameStatus from(String input) {
         return Arrays.stream(values())
             .filter(gameStatus -> gameStatus.input.equals(input))
             .findFirst()
             .orElseThrow(() -> new IllegalArgumentException("잘못된 입력입니다. 1또는 2를 입력해주세요."));
+    }
+
+    public boolean isPlay() {
+        return this == PLAY;
     }
 }

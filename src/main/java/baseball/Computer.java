@@ -19,7 +19,6 @@ public class Computer {
             BaseballNumber number = numbers.get(i);
             Hint hint = getHint(number, i);
             hints.put(hint, hints.getOrDefault(hint, 0) + 1);
-
         }
 
         return HintResult.from(hints);
@@ -30,7 +29,7 @@ public class Computer {
             return Hint.NOTHING;
         }
 
-        if(baseballNumbers.isStrike(number, idx)) {
+        if (baseballNumbers.isStrike(number, idx)) {
             return Hint.STRIKE;
         }
 
