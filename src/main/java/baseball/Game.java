@@ -1,11 +1,6 @@
 package baseball;
 
 public class Game {
-    public static void main(String[] args) {
-        Game game = new Game();
-        game.init();
-    }
-
     public void init() {
         GameStatus gameStatus = GameStatus.PLAY;
 
