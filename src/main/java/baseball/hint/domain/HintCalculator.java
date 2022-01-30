@@ -18,21 +18,21 @@ public class HintCalculator {
 
         List<BaseballNumber> numbers = baseballNumbers.getNumbers();
 
-        for (int i = 0; i < numbers.size(); i++) {
-            BaseballNumber number = numbers.get(i);
-            Hint hint = getHint(number, i);
+        for (int idx = 0; idx < numbers.size(); idx++) {
+            BaseballNumber number = numbers.get(idx);
+            Hint hint = getHint(number, idx);
             hints.put(hint, hints.getOrDefault(hint, 0) + 1);
         }
 
         return HintResult.from(hints);
     }
 
-    public Hint getHint(BaseballNumber number, int idx) {
+    public Hint getHint(BaseballNumber number, int place) {
         if (!baseballNumbers.contains(number)) {
             return Hint.NOTHING;
         }
 
-        if (baseballNumbers.hasSamePlace(number, idx)) {
+        if (baseballNumbers.hasSamePlace(number, place)) {
             return Hint.STRIKE;
         }
 

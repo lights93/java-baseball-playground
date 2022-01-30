@@ -29,8 +29,8 @@ public class BaseballNumbers {
 
     public static BaseballNumbers from(String numbers) {
         List<BaseballNumber> inputs = new ArrayList<>();
-        for (char c : numbers.toCharArray()) {
-            inputs.add(BaseballNumber.from(Character.getNumericValue(c)));
+        for (char number : numbers.toCharArray()) {
+            inputs.add(BaseballNumber.from(Character.getNumericValue(number)));
         }
 
         return new BaseballNumbers(inputs);
@@ -44,7 +44,7 @@ public class BaseballNumbers {
         return numbers.contains(number);
     }
 
-    public boolean hasSamePlace(BaseballNumber number, int idx) {
-        return number.equals(numbers.get(idx));
+    public boolean hasSamePlace(BaseballNumber number, int place) {
+        return number.equals(numbers.get(place));
     }
 }
