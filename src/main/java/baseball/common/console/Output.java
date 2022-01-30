@@ -1,4 +1,6 @@
-package baseball;
+package baseball.common.console;
+
+import baseball.hint.domain.HintResultMessage;
 
 public class Output {
     private Output() {

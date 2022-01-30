@@ -1,8 +1,10 @@
-package baseball;
+package baseball.number.domain;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+
+import baseball.hint.domain.Hint;
 
 public class BaseballNumbers {
     public static final int SIZE = 3;

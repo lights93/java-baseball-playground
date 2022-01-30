@@ -1,7 +1,9 @@
-package baseball;
+package baseball.hint.domain;
 
 import java.util.Map;
 import java.util.Objects;
+
+import baseball.number.domain.BaseballNumbers;
 
 public class HintResult {
     private final Map<Hint, Integer> hints;

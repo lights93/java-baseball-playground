@@ -1,4 +1,6 @@
-package baseball;
+package baseball.hint.domain;
+
+import baseball.number.domain.BaseballNumbers;
 
 public class HintResultMessage {
     private static final String SPACE = " ";

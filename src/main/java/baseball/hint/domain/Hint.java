@@ -1,4 +1,4 @@
-package baseball;
+package baseball.hint.domain;
 
 import java.util.Arrays;
 import java.util.EnumMap;

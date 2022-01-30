@@ -1,4 +1,4 @@
-package baseball;
+package baseball.number.domain;
 
 import static org.assertj.core.api.Assertions.*;
 

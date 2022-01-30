@@ -1,4 +1,4 @@
-package baseball;
+package baseball.number.utils;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,6 +7,9 @@ import java.util.HashSet;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+
+import baseball.number.domain.BaseballNumber;
+import baseball.number.domain.BaseballNumbers;
 
 class NumbersGeneratorTest {
 

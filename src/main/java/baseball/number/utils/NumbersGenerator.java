@@ -1,8 +1,11 @@
-package baseball;
+package baseball.number.utils;
 
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+
+import baseball.number.domain.BaseballNumber;
+import baseball.number.domain.BaseballNumbers;
 
 public class NumbersGenerator {
     private static final Random random = new Random();

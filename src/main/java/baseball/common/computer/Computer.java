@@ -1,7 +1,12 @@
-package baseball;
+package baseball.common.computer;
 
 import java.util.List;
 import java.util.Map;
+
+import baseball.hint.domain.Hint;
+import baseball.hint.domain.HintResult;
+import baseball.number.domain.BaseballNumber;
+import baseball.number.domain.BaseballNumbers;
 
 public class Computer {
     private final BaseballNumbers baseballNumbers;

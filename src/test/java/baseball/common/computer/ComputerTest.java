@@ -1,4 +1,4 @@
-package baseball;
+package baseball.common.computer;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -7,6 +7,10 @@ import java.util.Map;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import baseball.hint.domain.Hint;
+import baseball.hint.domain.HintResult;
+import baseball.number.domain.BaseballNumbers;
 
 class ComputerTest {
     @ParameterizedTest

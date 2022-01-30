@@ -1,4 +1,13 @@
-package baseball;
+package baseball.game.service;
+
+import baseball.common.computer.Computer;
+import baseball.common.console.Input;
+import baseball.common.console.Output;
+import baseball.game.domain.GameStatus;
+import baseball.hint.domain.HintResult;
+import baseball.hint.domain.HintResultMessage;
+import baseball.number.domain.BaseballNumbers;
+import baseball.number.utils.NumbersGenerator;
 
 public class Game {
     public void init() {
