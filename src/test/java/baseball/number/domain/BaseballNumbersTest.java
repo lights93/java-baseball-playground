@@ -1,13 +1,11 @@
 package baseball.number.domain;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import baseball.hint.domain.Hint;
 
 class BaseballNumbersTest {
 
@@ -27,14 +25,34 @@ class BaseballNumbersTest {
             .withMessage("중복된 숫자없이 입력해주세요.");
     }
 
-    @Test
-    void getHint() {
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3})
+    void contains(int number) {
         BaseballNumbers baseballNumbers = BaseballNumbers.from("123");
 
-        assertAll(
-            () -> assertThat(baseballNumbers.getHint(BaseballNumber.from(1), 0)).isEqualTo(Hint.STRIKE),
-            () -> assertThat(baseballNumbers.getHint(BaseballNumber.from(3), 1)).isEqualTo(Hint.BALL),
-            () -> assertThat(baseballNumbers.getHint(BaseballNumber.from(4), 2)).isEqualTo(Hint.NOTHING)
-        );
+        assertThat(baseballNumbers.contains(BaseballNumber.from(number))).isTrue();
+    }
+
+    @Test
+    void containsFalse() {
+        BaseballNumbers baseballNumbers = BaseballNumbers.from("123");
+
+        assertThat(baseballNumbers.contains(BaseballNumber.from(4))).isFalse();
+    }
+
+    @ParameterizedTest
+    @CsvSource({"1,0", "2,1", "3,2"})
+    void hasSamePlace(int number, int place) {
+        BaseballNumbers baseballNumbers = BaseballNumbers.from("123");
+
+        assertThat(baseballNumbers.hasSamePlace(BaseballNumber.from(number), place)).isTrue();
+    }
+
+    @ParameterizedTest
+    @CsvSource({"1,1", "1,2", "4,1"})
+    void hasSamePlaceFalse(int number, int place) {
+        BaseballNumbers baseballNumbers = BaseballNumbers.from("123");
+
+        assertThat(baseballNumbers.hasSamePlace(BaseballNumber.from(number), place)).isFalse();
     }
 }

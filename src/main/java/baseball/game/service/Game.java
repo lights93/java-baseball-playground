@@ -1,9 +1,9 @@
 package baseball.game.service;
 
-import baseball.common.computer.Computer;
 import baseball.common.console.Input;
 import baseball.common.console.Output;
 import baseball.game.domain.GameStatus;
+import baseball.hint.domain.HintCalculator;
 import baseball.hint.domain.HintResult;
 import baseball.hint.domain.HintResultMessage;
 import baseball.number.domain.BaseballNumbers;
@@ -15,8 +15,8 @@ public class Game {
 
         while (gameStatus.isPlay()) {
             BaseballNumbers baseballNumbers = NumbersGenerator.generate();
-            Computer computer = new Computer(baseballNumbers);
-            findAnswer(computer);
+            HintCalculator hintCaculator = new HintCalculator(baseballNumbers);
+            findAnswer(hintCaculator);
 
             Output.printEndMessage();
             gameStatus = getGameStatus();
@@ -33,11 +33,11 @@ public class Game {
         }
     }
 
-    private void findAnswer(Computer computer) {
-        HintResult hintResult = computer.calculateHint(getBaseballNumbers());
+    private void findAnswer(HintCalculator hintCaculator) {
+        HintResult hintResult = hintCaculator.calculate(getBaseballNumbers());
         Output.printHintResultMessage(HintResultMessage.from(hintResult));
         if (!hintResult.isAnswer()) {
-            findAnswer(computer);
+            findAnswer(hintCaculator);
         }
     }
 

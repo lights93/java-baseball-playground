@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import baseball.hint.domain.Hint;
-
 public class BaseballNumbers {
     public static final int SIZE = 3;
     private final List<BaseballNumber> numbers;
@@ -42,15 +40,11 @@ public class BaseballNumbers {
         return numbers;
     }
 
-    public Hint getHint(BaseballNumber number, int idx) {
-        if (!numbers.contains(number)) {
-            return Hint.NOTHING;
-        }
+    public boolean contains(BaseballNumber number) {
+        return numbers.contains(number);
+    }
 
-        if (number.equals(numbers.get(idx))) {
-            return Hint.STRIKE;
-        }
-
-        return Hint.BALL;
+    public boolean hasSamePlace(BaseballNumber number, int idx) {
+        return number.equals(numbers.get(idx));
     }
 }
