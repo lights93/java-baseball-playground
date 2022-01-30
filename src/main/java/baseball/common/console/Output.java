@@ -1,7 +1,5 @@
 package baseball.common.console;
 
-import baseball.hint.domain.HintResultMessage;
-
 public class Output {
     private Output() {
     }
@@ -10,8 +8,8 @@ public class Output {
         System.out.println("숫자를 입력해 주세요 : ");
     }
 
-    public static void printHintResultMessage(HintResultMessage hintResultMessage) {
-        System.out.println(hintResultMessage.getMessage());
+    public static void printHintResultMessage(String hintResultMessage) {
+        System.out.println(hintResultMessage);
     }
 
     public static void printEndMessage() {

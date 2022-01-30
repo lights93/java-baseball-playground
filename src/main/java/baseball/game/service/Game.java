@@ -35,7 +35,7 @@ public class Game {
 
     private void findAnswer(HintCalculator hintCaculator) {
         HintResult hintResult = hintCaculator.calculate(getBaseballNumbers());
-        Output.printHintResultMessage(HintResultMessage.from(hintResult));
+        Output.printHintResultMessage(HintResultMessage.from(hintResult).getMessage());
         if (!hintResult.isAnswer()) {
             findAnswer(hintCaculator);
         }
